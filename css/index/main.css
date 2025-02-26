@@ -1,0 +1,18 @@
+main {
+	background: transparent;
+}
+
+.main {
+
+	.drawing-toolbar {
+		display: flex;
+		justify-content: space-around;
+	}
+	
+	.drawing-board {
+		box-sizing: border-box;
+		margin: 0 auto;
+		border: 1px solid black;
+	}
+	
+}

@@ -1,0 +1,30 @@
+@import url(./normalize.css);
+@import url(./index/variable.css);
+@import url(./index/elements.css);
+@import url(./index/header.css);
+@import url(./index/main.css);
+@import url(./index/footer.css);
+
+html,
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h5,
+p,
+div {
+  padding: 0;
+  margin: 0;
+}
+
+.container {
+  max-width: 1024px;
+  margin: 0 auto;
+}
+body {
+  min-height: 100vh;
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+}
