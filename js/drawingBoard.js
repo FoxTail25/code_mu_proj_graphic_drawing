@@ -34,9 +34,13 @@ function getRadians(degrees) {
 let gbrX = canvas.getBoundingClientRect().x;
 let gbrY = canvas.getBoundingClientRect().y;
 
-canvas.addEventListener('mousemove', (e) => {
-	
-	// console.log('123')
+canvas.addEventListener('mousemove', drawingCircle)
+canvas.addEventListener('click', drawingCircle)
+
+function drawingCircle(e){
+	// console.log(e)
+	console.log(e.x)
+	console.log(e.y)
 	if (e.buttons == 1) {
 		let mouseX = e.x;
 		let mouseY = e.y;
@@ -49,7 +53,8 @@ canvas.addEventListener('mousemove', (e) => {
 		ctx.fillStyle = canvasColor;
 		ctx.fill();
 	}
-})
+}
+
 
 function saveImg() {
 	const dataUrl = canvas.toDataURL('image/png');
