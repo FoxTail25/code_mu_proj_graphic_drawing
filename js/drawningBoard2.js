@@ -1,36 +1,21 @@
-import drawingPanelAddTools from './util/createDrawPanel.js';
+import CanvasW from "./util/canvasWork.js";
 
-// drawingPanelAddTools();
-
-const drawingToolbar = document.querySelector('.drawing-toolbar')
-
-document.getElementById('clearCanvasBtn').addEventListener('click', () => ctx.clearRect(0, 0, canvas.width, canvas.height));
+const canvas = document.getElementById('canvas-draw-board');
+const canvasWork = new CanvasW(canvas);
 
 let colorInput = document.getElementById('colorInput')
-colorInput.addEventListener('change', ()=> console.log(canvasColor =  colorInput.value))
-let canvas = document.querySelector('canvas');
+colorInput.addEventListener('change', ()=> console.log(canvasWork.setColor(colorInput.value)))
+
 let brushWieght = document.getElementById('brushWeight');
-brushWieght.addEventListener('change', ()=> circleWeight = brushWieght.value)
-let canvasColor =  colorInput.value;
-let circleWeight =1;
-
-const saveBtn = document.getElementById('saveImgBtn');
-saveBtn.addEventListener('click', saveImg)
-
-
-let ctx = canvas.getContext('2d');
-
-
-
-function getRadians(degrees) {
-	return (Math.PI / 180) * degrees;
-}
+brushWieght.addEventListener('change', ()=> canvasWork.setCircleRadius(brushWieght.value))
 
 let gbrX = canvas.getBoundingClientRect().x;
 let gbrY = canvas.getBoundingClientRect().y;
 
+
 canvas.addEventListener('mousemove', drawingCircle)
 canvas.addEventListener('mousedown', drawingCircle)
+
 
 function drawingCircle(e){
 	if (e.buttons == 1) {
@@ -49,7 +34,10 @@ function drawingCircle(e){
 }
 
 
-function saveImg() {
+const saveBtn = document.getElementById('saveImgBtn');
+saveBtn.addEventListener('click', saveImgFunc);
+
+function saveImgFunc() {
 	const dataUrl = canvas.toDataURL('image/png');
 	const link = document.createElement('a');
 	link.href = dataUrl;
