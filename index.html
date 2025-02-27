@@ -31,11 +31,21 @@
 	<main>
 		<div class="container">
 			<div class="main">
-				<div class="drawing-toolbar">
+				<div id="drw-tool" class="drawing-toolbar">
 					<button id="clearCanvasBtn">clear</button>
-					<input id="colorInput" type="color" value="#F0F0F0">
-					<input id="brushWeight" type="number" value="5" max="70" min="1">
-					<button id="saveImgBtn">Получить ссылку на скачивание</button>
+					<div>
+						цвет
+						<input id="colorInput" type="color" value="#000000">
+					</div>
+					<div>
+						толщина
+						<input id="brushWeight" type="number" value="1" max="70" min="1">
+					</div>
+					<div>
+						размытие
+						<input id="brushBlur" type="number" value="0" max="10" min="0">
+					</div>
+					<button id="saveImgBtn">Сохранить изображение в файл</button>
 				</div>
 				<!-- <canvas class="drawing-board"></canvas> -->
 				<!-- <canvas class="drawing-board" style="width:200px; height:200px"></canvas> -->
@@ -65,7 +75,8 @@
 			</div>
 		</div>
 	</div>
-	<script src="./js/drawningBoard2.js" type="module"></script>
+	<script src="./js/drawingBoard3.js" type="module"></script>
+	<!-- <script src="./js/drawningBoard3.js" type="module"></script> -->
 	<!-- <script src="./js/util/canvasWidtch.js"></script> -->
 </body>
 

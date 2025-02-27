@@ -1,4 +1,4 @@
-import drawingPanelAddTools from './util/createDrawPanel.js';
+// import drawingPanelAddTools from './util/createDrawPanel.js';
 
 // drawingPanelAddTools();
 
@@ -20,6 +20,7 @@ saveBtn.addEventListener('click', saveImg)
 
 let ctx = canvas.getContext('2d');
 
+console.log('db')
 
 
 function getRadians(degrees) {
@@ -33,6 +34,7 @@ canvas.addEventListener('mousemove', drawingCircle)
 canvas.addEventListener('mousedown', drawingCircle)
 
 function drawingCircle(e){
+	console.log('btn')
 	if (e.buttons == 1) {
 		// let mouseX = e.x;
 		let mouseX = e.clientX;
