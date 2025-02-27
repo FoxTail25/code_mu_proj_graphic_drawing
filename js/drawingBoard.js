@@ -1,62 +1,91 @@
-// import drawingPanelAddTools from './util/createDrawPanel.js';
+const canvas = document.getElementById("canvas-draw-board");
+const context = canvas.getContext("2d");
 
-// drawingPanelAddTools();
 
-const drawingToolbar = document.querySelector('.drawing-toolbar')
-
-document.getElementById('clearCanvasBtn').addEventListener('click', () => ctx.clearRect(0, 0, canvas.width, canvas.height));
-
+// установка цвета
 let colorInput = document.getElementById('colorInput')
-colorInput.addEventListener('change', ()=> console.log(canvasColor =  colorInput.value))
-let canvas = document.querySelector('canvas');
-let brushWieght = document.getElementById('brushWeight');
-brushWieght.addEventListener('change', ()=> circleWeight = brushWieght.value)
-let canvasColor =  colorInput.value;
-let circleWeight =1;
+let canvasColor = colorInput.value;
+colorInput.addEventListener('change', () => {
+	context.strokeStyle = colorInput.value;
+	// console.log(colorInput.value)
+})
+
+// установка фона
+context.fillRect(0, 0, canvas.width, canvas.height);
+context.fillStyle = '#FFFFFF';
+context.fillRect(0, 0, canvas.width, canvas.height);
+context.strokeStyle = canvasColor;
+
+// очищение canvas
+document.getElementById('clearCanvasBtn').addEventListener('click', ()=> context.clearRect(0,0,canvas.width, canvas.height));
+
+//установка толщины линии
+const lineWeight = document.getElementById('brushWeight');
+lineWeight.addEventListener('change', () => context.lineWidth = lineWeight.value);
+
+//установка размытия линии
+const lineblur = document.getElementById('brushBlur');
+lineWeight.addEventListener('change', () => context.filter = `blur(${lineblur.value}px)`);
+context.filter = `blur(${lineblur.value}px)`;
+lineblur.addEventListener('change', () => context.filter = `blur(${lineblur.value}px)`)
+
+// console.log(context)
+
+const w = canvas.width;
+const h = canvas.height;
+
+const mouse = { x: 0, y: 0 };      // координаты мыши
+let draw = false;
+
+//толщина линии
+context.lineWidth = lineWeight.value;
+
+// нажатие мыши
+canvas.addEventListener("mousedown", function (e) {
+	
+	
+	mouse.x = e.pageX - this.offsetLeft;
+	mouse.y = e.pageY - this.offsetTop;
+	draw = true;
+	context.beginPath();
+	context.moveTo(mouse.x, mouse.y);
+});
+// перемещение мыши
+canvas.addEventListener("mousemove", function (e) {
+	
+	if (draw == true) {
+		
+		// context.filter = 'opacity(3%)';
+		// context.filter = 'opacity(30%)';
+		mouse.x = e.pageX - this.offsetLeft;
+		mouse.y = e.pageY - this.offsetTop;
+		context.lineTo(mouse.x, mouse.y);
+		context.stroke();
+	}
+});
+
+// отпускаем мышь
+canvas.addEventListener("mouseup", function (e) {
+	
+	mouse.x = e.pageX - this.offsetLeft;
+	mouse.y = e.pageY - this.offsetTop;
+	context.lineTo(mouse.x, mouse.y);
+	context.stroke();
+	context.closePath();
+	draw = false;
+});
+
 
 const saveBtn = document.getElementById('saveImgBtn');
-saveBtn.addEventListener('click', saveImg)
+saveBtn.addEventListener('click', saveImgFunc);
 
 
-let ctx = canvas.getContext('2d');
-
-console.log('db')
-
-
-function getRadians(degrees) {
-	return (Math.PI / 180) * degrees;
-}
-
-let gbrX = canvas.getBoundingClientRect().x;
-let gbrY = canvas.getBoundingClientRect().y;
-
-canvas.addEventListener('mousemove', drawingCircle)
-canvas.addEventListener('mousedown', drawingCircle)
-
-function drawingCircle(e){
-	console.log('btn')
-	if (e.buttons == 1) {
-		// let mouseX = e.x;
-		let mouseX = e.clientX;
-		let mouseY = e.y;
-
-		let canvaX = mouseX - gbrX;
-		let canvaY = mouseY - gbrY;
-
-		ctx.beginPath();
-		ctx.arc(canvaX, canvaY, circleWeight, 0, getRadians(360));
-		ctx.fillStyle = canvasColor;
-		ctx.fill();
-	}
-}
-
-
-function saveImg() {
+function saveImgFunc() {
 	const dataUrl = canvas.toDataURL('image/png');
 	const link = document.createElement('a');
 	link.href = dataUrl;
-	link.download = 'шедевр.png'; // Это было бы по душе Пикассо 👍
-	drawingToolbar.appendChild(link);
+	link.download = 'шедевр.png';
+
 	link.click();
-	drawingToolbar.removeChild(link);
+
 }
