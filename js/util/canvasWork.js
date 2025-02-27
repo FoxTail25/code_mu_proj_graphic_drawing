@@ -18,11 +18,16 @@ class CanvasW {
         return (Math.PI / 180) * degrees;
     }
     paintCircle(x,y){
-        this.ctx.beginPath();
-        ctx.arc(x, y, this.circleRadius, 0, getRadians(360));
+        let ctx = this.ctx
+        ctx.beginPath();
+        ctx.arc(x, y, this.circleRadius, 0, this._getRadians(360));
         ctx.fillStyle = this.canvasColor;
 		ctx.fill();
-        this.ctx.closePath();
+        ctx.closePath();
+    }
+    clearCanvas(){
+        console.log('clear')
+        this.ctx.clearRect(0, 0, this.canvas.width, this.canvas.height)
     }
 }
 
