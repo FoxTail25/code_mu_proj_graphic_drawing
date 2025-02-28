@@ -1,23 +1,77 @@
 main {
-	background: transparent;
+  background: transparent;
 }
 
-.main {
+.drawing-toolbar {
+  display: flex;
+  justify-content: space-around;
+}
 
-	.drawing-toolbar {
-		display: flex;
-		justify-content: space-around;
-	}
-	
-	.drawing-board {
-		box-sizing: border-box;
-		margin: 0 auto;
-		border: 1px solid black;
-	}
+.drawing-board {
+  box-sizing: border-box;
+  margin: 0 auto;
+  border: 1px solid black;
+}
 
-	#drw-tool {
-		padding-top: 10px;
-		padding-bottom: 10px;
-	}
+#drw-tool {
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+.inputContainer {
+	display: flex;
+	align-items:center;
+	justify-content: center;
+}
+#colorInput {
+  display: inline-block;
+  visibility: hidden;
+  width: 0px;
+  height: 0;
+}
+.canvas-container {
+	width: 100%;
+	height: 600px;
+	/* border: 1px solid red; */
+	box-sizing:border-box;
+	/* position: relative; */
+	display: grid;
+	grid-template-columns: 20px 1fr 20px;
+	grid-template-columns: 20px 1fr 20px;
+}
+.canvas-container>div {
+	box-sizing:border-box;
+	/* position: absolute; */
 	
+}
+.canvas-container>div:nth-child(1) {
+	height: 100%;
+	width: 20px;
+	background: red;
+	background: linear-gradient(-90deg, var(--frame-color_1) 30%, var(--frame-color_2) 90%);
+	clip-path: polygon(0 0, 100% 3%, 100% 97%, 0% 100%);
+
+}
+.canvas-container>div:nth-child(2) {
+	height: 20px;
+	width: 100%;
+	background: red;
+	background: linear-gradient(0deg, var(--frame-color_1) 30%, var(--frame-color_2) 90%);
+	clip-path: polygon(0.00% 0.00%,100% 0%,98% 100%,2% 100%);
+
+}
+.canvas-container>div:nth-child(3) {
+	height: 100%;
+	width: 20px;
+	background: red;
+	background: linear-gradient(90deg, var(--frame-color_1) 30%, var(--frame-color_2) 90%);
+	clip-path: polygon(0% 3%,100.00% 0.00%,100.00% 100.00%,0.00% 97%);
+	right: 0;
+}
+.canvas-container>div:nth-child(4) {
+	height: 20px;
+	width: 100%;
+	background: red;
+	background: linear-gradient(180deg, var(--frame-color_1) 30%, var(--frame-color_2) 90%);
+	clip-path: polygon(2.00% 0.00%,98% 0%,100% 100%,0% 100%);
+	bottom: 0;
 }

@@ -39,7 +39,6 @@ class CanvasW {
     _getRadians(degrees) {
         return (Math.PI / 180) * degrees;
     }
-  
 }
 
 export default CanvasW

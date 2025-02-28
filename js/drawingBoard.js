@@ -5,7 +5,7 @@ let colorInput = document.getElementById('colorInput')
 let canvasColor = colorInput.value;
 colorInput.addEventListener('change', () => {
 	context.strokeStyle = colorInput.value;
-	// console.log(colorInput.value)
+	console.log(colorInput.value)
 })
 // установка фона
 context.fillRect(0, 0, canvas.width, canvas.height);
@@ -21,8 +21,7 @@ lineWeight.addEventListener('change', () => context.lineWidth = lineWeight.value
 const lineblur = document.getElementById('brushBlur');
 lineWeight.addEventListener('change', () => context.filter = `blur(${lineblur.value}px)`);
 context.filter = `blur(${lineblur.value}px)`;
-lineblur.addEventListener('change', () => context.filter = `blur(${lineblur.value}px)`)
-// console.log(context)
+lineblur.addEventListener('change', () => context.filter = `blur(${lineblur.value}px)`);
 const w = canvas.width;
 const h = canvas.height;
 const mouse = { x: 0, y: 0 };      // координаты мыши
