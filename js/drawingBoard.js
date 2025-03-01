@@ -107,6 +107,8 @@ canvas.addEventListener("mouseup", (e) => canvasWork.stopBrushPaint(e));
 document.getElementById('colorInput').addEventListener('change', (e) => { canvasWork.setColor(e.target.value) });
 //установка толщины линии
 document.getElementById('brushWeight').addEventListener('change', (e) => canvasWork.setBrushWeight(e.target.value));
+//установка прозрачности линии
+document.getElementById('brushOpacity').addEventListener('change', (e) => canvasWork.setBrushOpacity(e.target.value));
 //установка размытия линии
 document.getElementById('brushBlur').addEventListener('change', (e) => canvasWork.setBlur(e.target.value));
 // Кнопка сохранения рисунка
@@ -140,7 +142,6 @@ let animationFlag = 1;
 function clearAnimation() {
 
 	// Первая версия анимации
-
 	// console.log('clear anim')
 	// front.classList.add('rotate');
 	// back.classList.add('rotate');

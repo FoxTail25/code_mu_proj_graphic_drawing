@@ -2,14 +2,24 @@ class CanvasW {
     constructor(canvasNodeElement) {
         this.canvas = canvasNodeElement;
         this.ctx = this.canvas.getContext('2d');
+        this.ctx.lineCap = "round";
+        this.ctx.lineJoin = "round";
     }
     mouse = { x: 0, y: 0 };
+    opacity = 10;
     setColor(color){
+        if (this.opacity < 10) {
+            let rgba = this._hex2rgb(color)
+            this.ctx.strokeStyle = `rgb('${rgba.red}','${rgba.green}','${rgba.blue}','${this.opacity}')`;
+        }
         this.ctx.strokeStyle = color;
     };
     setBrushWeight(num){
-        this.ctx.lineWidth = num;
+        this.ctx.lineWidth = num / 10;
     };
+    setBrushOpacity(num) {
+        this.ctx.filter = `blur(${num}px)`;
+    }
     setBlur(num) {
         this.ctx.filter = `blur(${num}px)`;
     }
@@ -57,6 +67,13 @@ class CanvasW {
     }
     getCanvas(){
         return this.canvas;
+    }
+    _hex2rgb(c) {
+        let bigint = parseInt(c.split('#')[1], 16);
+        let r = (bigint >> 16) & 255;
+        let g = (bigint >> 8) & 255;
+        let b = bigint & 255;
+        return {red:r, green:g, blue: b};
     }
 }
 
