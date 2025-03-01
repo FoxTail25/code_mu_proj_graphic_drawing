@@ -10,9 +10,8 @@ main {
 .drawing-board {
   box-sizing: border-box;
   margin: 0 auto;
-  border: 1px solid black;
+  /* border: 1px solid black; */
   cursor: url(../../favicon.ico) 0 16, default !important;
-  /* cursor: url(http://cdn.sstatic.net/Sites/stackoverflow/img/favicon.ico), default !important; */
 }
 
 #drw-tool {
@@ -80,4 +79,22 @@ main {
 	bottom: 0;
 	grid-row: 3/4;
 	grid-column: 1/4;
+}
+
+.painting_container {
+	position: relative;
+	backface-visibility: hidden;
+}
+.canvas-container {
+	position: absolute;
+	left: 0;
+	top:0;
+
+}
+front {
+
+}
+
+.back {
+	/* background: red; */
 }
