@@ -1,6 +1,7 @@
 :root {
-	--frame-color_1:rgb(119, 111, 0);
-	--frame-color_2:rgb(253, 255, 117);
+  --frame-color_1: rgb(119, 111, 0);
+  --frame-color_2: rgb(253, 255, 117);
 
-	--perspective:1500px;
+  --perspective: 1500px;
+  --color-default: #000000;
 }

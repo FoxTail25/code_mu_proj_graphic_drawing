@@ -19,9 +19,9 @@ main {
   padding-bottom: 10px;
 }
 .inputContainer {
-	display: flex;
-	align-items:center;
-	justify-content: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 #colorInput {
   display: inline-block;
@@ -29,84 +29,129 @@ main {
   width: 0px;
   height: 0;
 }
+.paintspot {
+  position: relative;
+  display: inline-block;
+  height: 30px;
+  width: 70px;
+  /* align-self: stretch; */
+}
+
+.paintspot>div {
+  height: 20px;
+  width: 30px;
+  background: var(--color-default);
+  position: absolute;
+  clip-path: ellipse(40% 49.79% at 49.86% 49.8%);
+}
+/* .paintspot > :nth-child(1) {
+} */
+.paintspot > :nth-child(2) {
+  clip-path: ellipse(50% 45% at 49.86% 49.8%); 
+  left: 2px;
+  top: 17px;
+}
+.paintspot > :nth-child(3) {
+  clip-path: ellipse(70% 49.79% at 49.86% 49.8%);
+  left: 12px;
+  top: 12px;
+}
+.paintspot > :nth-child(4) {
+  clip-path: ellipse(30% 49.79% at 49.86% 49.8%);
+  left: 19px;
+  top: 1px;
+}
+.paintspot > :nth-child(5) {
+  clip-path: ellipse(49.3% 33% at 49.86% 49.80%);
+  left: 30px;
+  top: 12px;
+}
 .canvas-container {
-	width: 100%;
-	height: 600px;
-	/* border: 1px solid red; */
-	box-sizing:border-box;
-	/* position: relative; */
-	display: grid;
-	grid-template-columns: 20px 1fr 20px;
-	grid-template-rows: 20px 1fr 20px;
+  width: 100%;
+  height: 600px;
+  box-sizing: border-box;
+  display: grid;
+  grid-template-columns: 20px 1fr 20px;
+  grid-template-rows: 20px 1fr 20px;
 }
-.canvas-container>div {
-	box-sizing:border-box;
-	/* position: absolute; */
-	
+.canvas-container > div {
+  box-sizing: border-box;
+  /* position: absolute; */
 }
-.canvas-container>div:nth-child(1) {
-	height: 100%;
-	width: 20px;
-	background: linear-gradient(-90deg, var(--frame-color_1) 30%, var(--frame-color_2) 90%);
-	clip-path: polygon(0 0, 100% 3%, 100% 97%, 0% 100%);
-	grid-row:1/4;
-	grid-column: 1/2;
-
+.canvas-container > div:nth-child(1) {
+  height: 100%;
+  width: 20px;
+  background: linear-gradient(
+    -90deg,
+    var(--frame-color_1) 30%,
+    var(--frame-color_2) 90%
+  );
+  clip-path: polygon(0 0, 100% 3%, 100% 97%, 0% 100%);
+  grid-row: 1/4;
+  grid-column: 1/2;
 }
-.canvas-container>div:nth-child(2) {
-	height: 20px;
-	width: 100%;
-	background: linear-gradient(0deg, var(--frame-color_1) 30%, var(--frame-color_2) 90%);
-	clip-path: polygon(0.00% 0.00%,100% 0%,98% 100%,2% 100%);
-	grid-row: 1/2;
-	grid-column: 1/4;
-
+.canvas-container > div:nth-child(2) {
+  height: 20px;
+  width: 100%;
+  background: linear-gradient(
+    0deg,
+    var(--frame-color_1) 30%,
+    var(--frame-color_2) 90%
+  );
+  clip-path: polygon(0% 0%, 100% 0%, 98% 100%, 2% 100%);
+  grid-row: 1/2;
+  grid-column: 1/4;
 }
-.canvas-container>div:nth-child(3) {
-	height: 100%;
-	width: 20px;
-	background: linear-gradient(90deg, var(--frame-color_1) 30%, var(--frame-color_2) 90%);
-	clip-path: polygon(0% 3%,100.00% 0.00%,100.00% 100.00%,0.00% 97%);
-	right: 0;
-	grid-row: 1/4;
-	grid-column: 3/4;
+.canvas-container > div:nth-child(3) {
+  height: 100%;
+  width: 20px;
+  background: linear-gradient(
+    90deg,
+    var(--frame-color_1) 30%,
+    var(--frame-color_2) 90%
+  );
+  clip-path: polygon(0% 3%, 100% 0%, 100% 100%, 0% 97%);
+  right: 0;
+  grid-row: 1/4;
+  grid-column: 3/4;
 }
-.canvas-container>div:nth-child(4) {
-	height: 20px;
-	width: 100%;
-	background: linear-gradient(180deg, var(--frame-color_1) 30%, var(--frame-color_2) 90%);
-	clip-path: polygon(2.00% 0.00%,98% 0%,100% 100%,0% 100%);
-	bottom: 0;
-	grid-row: 3/4;
-	grid-column: 1/4;
+.canvas-container > div:nth-child(4) {
+  height: 20px;
+  width: 100%;
+  background: linear-gradient(
+    180deg,
+    var(--frame-color_1) 30%,
+    var(--frame-color_2) 90%
+  );
+  clip-path: polygon(2% 0%, 98% 0%, 100% 100%, 0% 100%);
+  bottom: 0;
+  grid-row: 3/4;
+  grid-column: 1/4;
 }
 
 .painting_container {
-	position: relative;
-	perspective: var(--perspective);
-	-moz-perspective: var(--perspective);
-	-webkit-perspective: var(--perspective);
-	height: 600px;
+  position: relative;
+  perspective: var(--perspective);
+  -moz-perspective: var(--perspective);
+  -webkit-perspective: var(--perspective);
+  height: 600px;
 }
 .canvas-container {
-	position: absolute;
-	transition: .8s;
-	backface-visibility: hidden;
-	
-
+  position: absolute;
+  transition: 0.8s;
+  backface-visibility: hidden;
 }
 .front {
-	transform: rotateY(0deg);
+  transform: rotateY(0deg);
 }
 
 .back {
-	transform: rotateY(-180deg);
+  transform: rotateY(-180deg);
 }
 
-
-.front.rotate{
-	transform: rotateY(180deg);
+.front.rotate {
+  transform: rotateY(180deg);
 }
-.back.rotate{
-	transform: rotateY(0deg);
+.back.rotate {
+  transform: rotateY(0deg);
 }
