@@ -8,10 +8,13 @@ colorInput.addEventListener('change', () => {
 	console.log(colorInput.value)
 })
 // установка фона
-context.fillRect(0, 0, canvas.width, canvas.height);
-context.fillStyle = '#FFFFFF';
-context.fillRect(0, 0, canvas.width, canvas.height);
-context.strokeStyle = canvasColor;
+function setCanvasBackground(){
+	context.fillRect(0, 0, canvas.width, canvas.height);
+	context.fillStyle = '#FFFFFF';
+	context.fillRect(0, 0, canvas.width, canvas.height);
+	context.strokeStyle = canvasColor;
+}
+setCanvasBackground()
 // очищение canvas
 document.getElementById('clearCanvasBtn').addEventListener('click', () => {context.clearRect(0, 0, canvas.width, canvas.height)
 
@@ -75,5 +78,6 @@ function saveImgFunc() {
 // Анимация стирания
 
 function clearAnimation(){
-	
+	console.log('clear anim')
+	setCanvasBackground()
 }
