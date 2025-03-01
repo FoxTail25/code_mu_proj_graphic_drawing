@@ -83,34 +83,30 @@ main {
 
 .painting_container {
 	position: relative;
-	perspective: 1500px;
-	-moz-perspective: 1500px;
-	-webkit-perspective: 1500px;
+	perspective: var(--perspective);
+	-moz-perspective: var(--perspective);
+	-webkit-perspective: var(--perspective);
 	height: 600px;
-	/* margin: 40px 0px; */
 }
 .canvas-container {
 	position: absolute;
-	/* left: 40px; */
-	/* top:0; */
-	transition: .6s;
+	transition: .8s;
 	backface-visibility: hidden;
 	
 
 }
 .front {
 	transform: rotateY(0deg);
-	background:green;
 }
 
 .back {
-	background: red;
 	transform: rotateY(-180deg);
 }
 
-/* .painting_container:hover .front{
+
+.front.rotate{
 	transform: rotateY(180deg);
 }
-.painting_container:hover .back{
+.back.rotate{
 	transform: rotateY(0deg);
-} */
+}
