@@ -36,7 +36,7 @@ main {
 	/* position: relative; */
 	display: grid;
 	grid-template-columns: 20px 1fr 20px;
-	grid-template-columns: 20px 1fr 20px;
+	grid-template-rows: 20px 1fr 20px;
 }
 .canvas-container>div {
 	box-sizing:border-box;
@@ -46,32 +46,36 @@ main {
 .canvas-container>div:nth-child(1) {
 	height: 100%;
 	width: 20px;
-	background: red;
 	background: linear-gradient(-90deg, var(--frame-color_1) 30%, var(--frame-color_2) 90%);
 	clip-path: polygon(0 0, 100% 3%, 100% 97%, 0% 100%);
+	grid-row:1/4;
+	grid-column: 1/2;
 
 }
 .canvas-container>div:nth-child(2) {
 	height: 20px;
 	width: 100%;
-	background: red;
 	background: linear-gradient(0deg, var(--frame-color_1) 30%, var(--frame-color_2) 90%);
 	clip-path: polygon(0.00% 0.00%,100% 0%,98% 100%,2% 100%);
+	grid-row: 1/2;
+	grid-column: 1/4;
 
 }
 .canvas-container>div:nth-child(3) {
 	height: 100%;
 	width: 20px;
-	background: red;
 	background: linear-gradient(90deg, var(--frame-color_1) 30%, var(--frame-color_2) 90%);
 	clip-path: polygon(0% 3%,100.00% 0.00%,100.00% 100.00%,0.00% 97%);
 	right: 0;
+	grid-row: 1/4;
+	grid-column: 3/4;
 }
 .canvas-container>div:nth-child(4) {
 	height: 20px;
 	width: 100%;
-	background: red;
 	background: linear-gradient(180deg, var(--frame-color_1) 30%, var(--frame-color_2) 90%);
 	clip-path: polygon(2.00% 0.00%,98% 0%,100% 100%,0% 100%);
 	bottom: 0;
+	grid-row: 3/4;
+	grid-column: 1/4;
 }
