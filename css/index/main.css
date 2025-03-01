@@ -11,6 +11,8 @@ main {
   box-sizing: border-box;
   margin: 0 auto;
   border: 1px solid black;
+  cursor: url(../../favicon.ico) 0 16, default !important;
+  /* cursor: url(http://cdn.sstatic.net/Sites/stackoverflow/img/favicon.ico), default !important; */
 }
 
 #drw-tool {
