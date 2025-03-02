@@ -1,7 +1,9 @@
 main {
 	background: transparent;
 }
-
+button {
+	max-width:170px;
+}
 .drawing-toolbar {
 	display        : flex;
 	justify-content: space-around;
@@ -162,16 +164,24 @@ main {
 
 .front {
 	transform: rotateY(0deg);
+	background:white;
+
 }
 
 .back {
 	transform: rotateY(-180deg);
+	background:white;
+
 }
 
 .front.rotate {
 	transform: rotateY(180deg);
+	background:white;
+
 }
 
 .back.rotate {
 	transform: rotateY(0deg);
+	background:white;
+
 }

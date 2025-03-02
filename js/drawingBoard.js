@@ -17,6 +17,9 @@ changePaintColorBtn.addEventListener('input', (e)=> {
 	let color = e.target.value;
 	[...paintSpots].forEach(elem => elem.style.background = color);
 }) // цвет "аватарки"
+document.getElementById('paintBackgroundBtn').addEventListener('click', ()=>{
+	canvasWork.setCanvasBackground(changePaintColorBtn.value)
+})
 //установка толщины линии
 document.getElementById('brushWeight').addEventListener('change', (e) => canvasWork.setBrushWeight(e.target.value));
 //установка прозрачности линии
