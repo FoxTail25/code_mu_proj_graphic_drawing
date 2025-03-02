@@ -43,7 +43,7 @@ document.getElementById('saveImgBtn').addEventListener('click',
 );
 // очищение canvas
 document.getElementById('clearCanvasBtn').addEventListener('click', () => {
-	clearAnimation()
+	clearAnimation();
 })
 let front = document.querySelector('.front');
 let back = document.querySelector('.back');
@@ -74,7 +74,7 @@ function clearAnimation() {
 			canvas = canvas.parentElement.removeChild(canvas);
 			back.appendChild(canvas);
 			canvasWork.clearCanvas();
-		}, 400)
+		}, 700)
 	} else {
 		animationFlag = 1;
 		front.classList.remove('rotate');
@@ -83,9 +83,8 @@ function clearAnimation() {
 			canvas = canvas.parentElement.removeChild(canvas);
 			front.appendChild(canvas);
 			canvasWork.clearCanvas();
-		}, 400)
+		}, 700);
 	}
 }
 // анимация появления 
-document.querySelector('._opacity').classList.remove('_opacity')
-document.querySelector('._opacity').classList.remove('_opacity')
+[...document.querySelectorAll('._opacity')].forEach(e => e.classList.remove('_opacity'));

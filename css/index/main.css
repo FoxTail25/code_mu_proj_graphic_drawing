@@ -19,8 +19,8 @@ main {
 }
 
 #drw-tool {
-	padding-top   : 10px;
-	padding-bottom: 10px;
+	padding-top   : 7px;
+	padding-bottom: 3px;
 }
 
 .inputContainer {
@@ -87,7 +87,7 @@ main {
 
 .canvas-container {
 	width                : 100%;
-	height               : 600px;
+	height               : 530px;
 	box-sizing           : border-box;
 	display              : grid;
 	grid-template-columns: 20px 1fr 20px;
@@ -150,7 +150,7 @@ main {
 	perspective        : var(--perspective);
 	-moz-perspective   : var(--perspective);
 	-webkit-perspective: var(--perspective);
-	height             : 600px;
+	height             : 530px;
 	transition: 1s 1.5s;
 }
 

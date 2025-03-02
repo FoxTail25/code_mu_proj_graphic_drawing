@@ -1,6 +1,6 @@
 footer {
 	background: rgb(226, 226, 226);
-	padding: 5px 0;
+	padding: 0;
 }
 .footer {
 	display: flex;
@@ -21,7 +21,7 @@ footer {
 	.author {
 		display: flex;
 		align-items: center;
-		padding: 5px;
+		padding: 3px;
 		justify-content: center;
 		.author_git, .author_telegram {
 			display: inline-block;

@@ -7,4 +7,9 @@ header {
 	position  : relative;
 	text-align: center;
 }
-
+.header>h1{
+	font-size: 25px;
+}
+.header>h2{
+	font-size: 20px;
+}
