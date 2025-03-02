@@ -44,7 +44,7 @@ main {
 	height    : 20px;
 	width     : 30px;
 	position  : absolute;
-	background: var(--color-default);
+	background: black;
 }
 
 .paintColor>:nth-child(1) {

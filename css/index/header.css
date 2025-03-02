@@ -1,8 +1,10 @@
 header {
 	background: transparent;
+	overflow  : hidden;
 }
 
 .header>* {
-	position: relative;
+	position  : relative;
 	text-align: center;
 }
+

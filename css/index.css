@@ -29,3 +29,7 @@ body {
   display: grid;
   grid-template-rows: auto 1fr auto;
 }
+body {
+  /* background-color: rgb(145, 184, 236); */
+  
+}
