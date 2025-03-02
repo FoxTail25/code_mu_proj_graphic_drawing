@@ -9,14 +9,12 @@ class CanvasW {
   opacity = 1;
   color = "#000000";
   setColor(color) {
-    console.log(color);
     let rgb = this._hex2rgb(color);
     if (this.opacity < 1) {
       let rgba = `rgba(${rgb.red},${rgb.green},${rgb.blue},${this.opacity})`;
       this.ctx.strokeStyle = rgba;
       this.color = rgba;
     } else {
-      console.log("rgb", rgb);
       let rgba = `rgba(${rgb.red},${rgb.green},${rgb.blue},1)`;
       this.ctx.strokeStyle = rgba;
       this.color = rgba;
@@ -24,7 +22,6 @@ class CanvasW {
   }
   setBrushOpacity(num) {
     this.opacity = (10 - num) / 10;
-    console.log(this.color);
     if (this.color == "#000000") {
       let rgb = this._hex2rgb(this.color);
       let rgba = `rgba(${rgb.red},${rgb.green},${rgb.blue},${this.opacity})`;
@@ -35,7 +32,6 @@ class CanvasW {
       let rgbaArr;
       rgbaArr = color.slice(5, this.color.length - 1).split(",");
       let [red, green, blue] = rgbaArr;
-      console.log("rgbblu", red, green, blue);
       let rgba = `rgba(${red},${green},${blue},${this.opacity})`;
       this.ctx.strokeStyle = rgba;
       this.color = rgba;

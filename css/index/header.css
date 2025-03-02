@@ -2,9 +2,7 @@ header {
 	background: transparent;
 }
 
-.header {
-
-	h1,h2 {
-		text-align: center;
-	}
+.header>* {
+	position: relative;
+	text-align: center;
 }
