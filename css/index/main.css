@@ -24,12 +24,15 @@ main {
 	align-items    : center;
 	justify-content: center;
 }
+.inputContainer>label>input {
+	width: 50px;
+}
 
 #colorInput {
 	display   : inline-block;
 	visibility: hidden;
 	width     : 0px;
-	height    : 0;
+	height    : 0px;
 }
 
 .paintColor {
