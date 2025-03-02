@@ -40,7 +40,6 @@ class CanvasW {
     this.ctx.filter = `blur(${num}px)`;
   }
   setCanvasBackground(color) {
-    console.log('bg', color)
     let context = this.ctx;
     if (color) {
       context.fillStyle = color;

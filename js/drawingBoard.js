@@ -17,6 +17,7 @@ changePaintColorBtn.addEventListener('input', (e)=> {
 	let color = e.target.value;
 	[...paintSpots].forEach(elem => elem.style.background = color);
 }) // цвет "аватарки"
+// заливка фона
 document.getElementById('paintBackgroundBtn').addEventListener('click', ()=>{
 	canvasWork.setCanvasBackground(changePaintColorBtn.value)
 })
