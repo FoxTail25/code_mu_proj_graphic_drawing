@@ -104,14 +104,15 @@ canvas.addEventListener("mousedown", (e) => canvasWork.startBrushPaint(e));
 canvas.addEventListener("mousemove", (e) => canvasWork.brushPaint(e));
 canvas.addEventListener("mouseup", (e) => canvasWork.stopBrushPaint(e));
 // установка цвета
-document.getElementById('colorInput').addEventListener('change', (e) => {
+let paintSpots = document.querySelectorAll('.paint_spot');
+let changePaintColorBtn = document.getElementById('colorInput');
+changePaintColorBtn.addEventListener('change', (e) => {
 	 canvasWork.setColor(e.target.value);
-	let cssVariable = document.styleSheets[1].rules[1].styleSheet.rules[0].style.cssText;
-	let arr = cssVariable.split(';')
-	arr[3] = `--color-default: ${e.target.value}`;
-	console.log(arr.join())
-	// document.styleSheets[1].rules[1].styleSheet.rules[0].style.cssText = arr.join()
-	});
+	}); // цвет линии
+changePaintColorBtn.addEventListener('input', (e)=> {
+	let color = e.target.value;
+	[...paintSpots].forEach(elem => elem.style.background = color);
+}) // цвет "аватарки"
 //установка толщины линии
 document.getElementById('brushWeight').addEventListener('change', (e) => canvasWork.setBrushWeight(e.target.value));
 //установка прозрачности линии

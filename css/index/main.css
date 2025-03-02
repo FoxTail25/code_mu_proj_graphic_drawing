@@ -29,7 +29,7 @@ main {
   width: 0px;
   height: 0;
 }
-.paintspot {
+.paintColor {
   position: relative;
   display: inline-block;
   height: 30px;
@@ -37,31 +37,32 @@ main {
   /* align-self: stretch; */
 }
 
-.paintspot>div {
+.paintColor>div {
   height: 20px;
   width: 30px;
-  background: var(--color-default);
   position: absolute;
-  clip-path: ellipse(40% 49.79% at 49.86% 49.8%);
+  background: var(--color-default);
 }
-/* .paintspot > :nth-child(1) {
-} */
-.paintspot > :nth-child(2) {
+.paintColor>:nth-child(1) {
+	clip-path: ellipse(40% 49.79% at 49.86% 49.8%);
+
+}
+.paintColor>:nth-child(2) {
   clip-path: ellipse(50% 45% at 49.86% 49.8%); 
   left: 2px;
   top: 17px;
 }
-.paintspot > :nth-child(3) {
+.paintColor>:nth-child(3) {
   clip-path: ellipse(70% 49.79% at 49.86% 49.8%);
   left: 12px;
   top: 12px;
 }
-.paintspot > :nth-child(4) {
+.paintColor>:nth-child(4) {
   clip-path: ellipse(30% 49.79% at 49.86% 49.8%);
   left: 19px;
   top: 1px;
 }
-.paintspot > :nth-child(5) {
+.paintColor>:nth-child(5) {
   clip-path: ellipse(49.3% 33% at 49.86% 49.80%);
   left: 30px;
   top: 12px;
