@@ -5,8 +5,12 @@ main {
 .drawing-toolbar {
 	display        : flex;
 	justify-content: space-around;
-}
+	transition: 1.3s 1s;
 
+}
+._opacity{
+	opacity: 0;
+}
 .drawing-board {
 	box-sizing: border-box;
 	margin    : 0 auto;
@@ -147,6 +151,7 @@ main {
 	-moz-perspective   : var(--perspective);
 	-webkit-perspective: var(--perspective);
 	height             : 600px;
+	transition: 1s 1.5s;
 }
 
 .canvas-container {

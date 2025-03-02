@@ -85,6 +85,7 @@ function clearAnimation() {
 			canvasWork.clearCanvas();
 		}, 400)
 	}
-
-
 }
+// анимация появления 
+document.querySelector('._opacity').classList.remove('_opacity')
+document.querySelector('._opacity').classList.remove('_opacity')

@@ -10,31 +10,27 @@ class CanvasW {
   color = "#000000";
   setColor(color) {
     let rgb = this._hex2rgb(color);
+    let rgba;
     if (this.opacity < 1) {
-      let rgba = `rgba(${rgb.red},${rgb.green},${rgb.blue},${this.opacity})`;
-      this.ctx.strokeStyle = rgba;
-      this.color = rgba;
+      rgba = `rgba(${rgb.red},${rgb.green},${rgb.blue},${this.opacity})`;
     } else {
-      let rgba = `rgba(${rgb.red},${rgb.green},${rgb.blue},1)`;
-      this.ctx.strokeStyle = rgba;
-      this.color = rgba;
+      rgba = `rgba(${rgb.red},${rgb.green},${rgb.blue},1)`;
     }
+    this._setColorData(rgba);
   }
   setBrushOpacity(num) {
     this.opacity = (10 - num) / 10;
     if (this.color == "#000000") {
       let rgb = this._hex2rgb(this.color);
       let rgba = `rgba(${rgb.red},${rgb.green},${rgb.blue},${this.opacity})`;
-      this.ctx.strokeStyle = rgba;
-      this.color = rgba;
+      this._setColorData(rgba);
     } else {
       let color = this.color;
       let rgbaArr;
       rgbaArr = color.slice(5, this.color.length - 1).split(",");
       let [red, green, blue] = rgbaArr;
       let rgba = `rgba(${red},${green},${blue},${this.opacity})`;
-      this.ctx.strokeStyle = rgba;
-      this.color = rgba;
+      this._setColorData(rgba);
     }
   }
   setBrushWeight(num) {
@@ -71,7 +67,6 @@ class CanvasW {
     if (this.draw == true) {
       mouse.x = e.layerX - this.canvas.offsetLeft;
       mouse.y = e.layerY - this.canvas.offsetTop;
-      // console.log(context.strokeStyle)
       context.lineTo(mouse.x, mouse.y);
       context.stroke();
     }
@@ -95,6 +90,10 @@ class CanvasW {
     let g = (bigint >> 8) & 255;
     let b = bigint & 255;
     return { red: r, green: g, blue: b };
+  }
+  _setColorData(rgba) {
+    this.ctx.strokeStyle = rgba;
+    this.color = rgba;
   }
 }
 
