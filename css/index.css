@@ -23,6 +23,8 @@ div {
   max-width: 1024px;
   margin: 0 auto;
   padding: 0;
+  background: rgba(255, 255, 255, 0.315);
+  backdrop-filter: blur(3px);
 }
 body {
   min-height: 100vh;
@@ -30,6 +32,14 @@ body {
   grid-template-rows: auto 1fr auto;
 }
 body {
-  background-color: rgb(145, 184, 236);
-
+  position: relative;
+  width: 100%;
 }
+.body_bg {
+  position: absolute;
+  height: 100vh;
+  width: 100%;
+  z-index: -1;
+  transition: 3s;
+   opacity: 0;
+} 

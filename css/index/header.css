@@ -3,6 +3,10 @@ header {
 	overflow  : hidden;
 }
 
+.header {
+	
+
+}
 .header>* {
 	position  : relative;
 	text-align: center;
