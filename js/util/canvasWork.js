@@ -6,20 +6,24 @@ class CanvasW {
         this.ctx.lineJoin = "round";
     }
     mouse = { x: 0, y: 0 };
-    opacity = 0;
+    opacity = 1;
     setColor(color){
-        if (this.opacity > 0) {
-            let rgba = this._hex2rgb(color)
-            this.ctx.strokeStyle = `rgb('${rgba.red}','${rgba.green}','${rgba.blue}','${this.opacity}')`;
+        if (this.opacity < 1) {
+            let rgb = this._hex2rgb(color);
+            let rgba = `rgba(${rgb.red},${rgb.green},${rgb.blue},${this.opacity})`;
+            this.ctx.strokeStyle = rgba;
+        }else {
+            this.ctx.strokeStyle = color;
         }
-        this.ctx.strokeStyle = color;
-    };
-    setBrushWeight(num){
-        this.ctx.lineWidth = num;
     };
     setBrushOpacity(num) {
         this.opacity = (10 - num) / 10;
+        let color = this.ctx.strokeStyle;
+        this.setColor(color)
     }
+    setBrushWeight(num){
+        this.ctx.lineWidth = num;
+    };
     setBlur(num) {
         this.ctx.filter = `blur(${num}px)`;
     }
