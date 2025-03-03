@@ -8,7 +8,6 @@ button {
 	display        : flex;
 	justify-content: space-around;
 	transition: 1.3s 1s;
-
 }
 ._opacity{
 	opacity: 0;
@@ -16,15 +15,12 @@ button {
 .drawing-board {
 	box-sizing: border-box;
 	margin    : 0 auto;
-	/* border : 1px solid black; */
 	cursor    : url(../../favicon.ico) 0 16, default !important;
 }
-
 #drw-tool {
 	padding-top   : 7px;
 	padding-bottom: 3px;
 }
-
 .input-container {
 	display        : flex;
 	align-items    : center;
@@ -33,60 +29,50 @@ button {
 .input-container>label>input {
 	width: 50px;
 }
-
 #color-input {
 	display   : inline-block;
 	visibility: hidden;
 	width     : 0px;
 	height    : 0px;
 }
-
 .paint-color {
 	position     : relative;
 	display      : inline-block;
 	height       : 30px;
 	width        : 70px;
-	/* align-self: stretch; */
 }
-
 .paint-color>div {
 	height    : 20px;
 	width     : 30px;
 	position  : absolute;
 	background: black;
 }
-
 .paint-color>:nth-child(1) {
 
 	clip-path: ellipse(40% 49.79% at 49.86% 49.8%);
 	top      : 5px;
 	left:5px
 }
-
 .paint-color>:nth-child(2) {
 	clip-path: ellipse(50% 45% at 49.86% 49.8%);
 	left     : 2px;
 	top      : 17px;
 }
-
 .paint-color>:nth-child(3) {
 	clip-path: ellipse(70% 49.79% at 49.86% 49.8%);
 	left     : 18px;
 	top      : 17px;
 }
-
 .paint-color>:nth-child(4) {
 	clip-path: ellipse(50% 49.79% at 49.86% 49.8%);
 	left     : 19px;
 	top      : 1px;
 }
-
 .paint-color>:nth-child(5) {
 	clip-path: ellipse(49.3% 53% at 49.86% 49.80%);
 	left     : 30px;
 	top      : 12px;
 }
-
 .canvas-container {
 	width                : 100%;
 	height               : 530px;
@@ -95,12 +81,9 @@ button {
 	grid-template-columns: 20px 1fr 20px;
 	grid-template-rows   : 20px 1fr 20px;
 }
-
 .canvas-container>div {
 	box-sizing : border-box;
-	/* position: absolute; */
 }
-
 .canvas-container>div:nth-child(1) {
 	height: 100%;
 	width : 20px;
@@ -111,7 +94,6 @@ button {
 	grid-row   : 1/4;
 	grid-column: 1/2;
 }
-
 .canvas-container>div:nth-child(2) {
 	height: 20px;
 	width : 100%;
@@ -122,7 +104,6 @@ button {
 	grid-row   : 1/2;
 	grid-column: 1/4;
 }
-
 .canvas-container>div:nth-child(3) {
 	height: 100%;
 	width : 20px;
@@ -134,7 +115,6 @@ button {
 	grid-row   : 1/4;
 	grid-column: 3/4;
 }
-
 .canvas-container>div:nth-child(4) {
 	height: 20px;
 	width : 100%;
@@ -146,7 +126,6 @@ button {
 	grid-row   : 3/4;
 	grid-column: 1/4;
 }
-
 .painting_container {
 	position           : relative;
 	perspective        : var(--perspective);
@@ -155,33 +134,24 @@ button {
 	height             : 530px;
 	transition: 1s 1.5s;
 }
-
 .canvas-container {
 	position           : absolute;
 	transition         : 0.8s;
 	backface-visibility: hidden;
 }
-
 .front {
 	transform: rotateY(0deg);
 	background:white;
-
 }
-
 .back {
 	transform: rotateY(-180deg);
 	background:white;
-
 }
-
 .front.rotate {
 	transform: rotateY(180deg);
 	background:white;
-
 }
-
 .back.rotate {
 	transform: rotateY(0deg);
 	background:white;
-
 }

@@ -19,7 +19,7 @@ changePaintColorBtn.addEventListener('input', (e)=> {
 }) // цвет "аватарки"
 // заливка фона
 document.getElementById('paint-background-btn').addEventListener('click', ()=>{
-	canvasWork.setCanvasBackground(changePaintColorBtn.value)
+	canvasWork.setCanvasBackground(changePaintColorBtn.value);
 })
 //установка толщины линии
 document.getElementById('brush-weight').addEventListener('change', (e) => canvasWork.setBrushWeight(e.target.value));
@@ -56,7 +56,6 @@ let back = document.querySelector('.back');
 //необходимая переменная для второй версии анимации
 let animationFlag = 1;
 function clearAnimation() {
-
 	// Первая версия анимации
 	// console.log('clear anim')
 	// front.classList.add('rotate');
