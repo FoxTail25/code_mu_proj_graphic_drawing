@@ -1,5 +1,7 @@
 main {
 	background: transparent;
+  display: grid;
+  align-items: center; 
 }
 button {
 	max-width:170px;
