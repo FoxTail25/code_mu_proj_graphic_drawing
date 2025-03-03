@@ -9,7 +9,7 @@ canvas.addEventListener("mousemove", (e) => canvasWork.brushPaint(e));
 canvas.addEventListener("mouseup", (e) => canvasWork.stopBrushPaint(e));
 // установка цвета
 let paintSpots = document.querySelectorAll('.paint_spot');
-let changePaintColorBtn = document.getElementById('colorInput');
+let changePaintColorBtn = document.getElementById('color-input');
 changePaintColorBtn.addEventListener('change', (e) => {
 	 canvasWork.setColor(e.target.value);
 	}); // цвет линии
@@ -18,17 +18,17 @@ changePaintColorBtn.addEventListener('input', (e)=> {
 	[...paintSpots].forEach(elem => elem.style.background = color);
 }) // цвет "аватарки"
 // заливка фона
-document.getElementById('paintBackgroundBtn').addEventListener('click', ()=>{
+document.getElementById('paint-background-btn').addEventListener('click', ()=>{
 	canvasWork.setCanvasBackground(changePaintColorBtn.value)
 })
 //установка толщины линии
-document.getElementById('brushWeight').addEventListener('change', (e) => canvasWork.setBrushWeight(e.target.value));
+document.getElementById('brush-weight').addEventListener('change', (e) => canvasWork.setBrushWeight(e.target.value));
 //установка прозрачности линии
-document.getElementById('brushOpacity').addEventListener('change', (e) => canvasWork.setBrushOpacity(e.target.value));
+document.getElementById('brush-opacity').addEventListener('change', (e) => canvasWork.setBrushOpacity(e.target.value));
 //установка размытия линии
-document.getElementById('brushBlur').addEventListener('change', (e) => canvasWork.setBlur(e.target.value));
+document.getElementById('brush-blur').addEventListener('change', (e) => canvasWork.setBlur(e.target.value));
 // Кнопка сохранения рисунка
-document.getElementById('saveImgBtn').addEventListener('click', function saveImgFunc() {
+document.getElementById('save-img-btn').addEventListener('click', function saveImgFunc() {
 	const dataUrl = canvasWork.getCanvas().toDataURL('image/png');
 	const link = document.createElement('a');
 	link.href = dataUrl;
@@ -36,7 +36,7 @@ document.getElementById('saveImgBtn').addEventListener('click', function saveImg
 	link.click();
 })
 // Сохранение рисунка
-document.getElementById('saveImgBtn').addEventListener('click',
+document.getElementById('save-img-btn').addEventListener('click',
 	function saveImgFunc() {
 		const dataUrl = canvas.toDataURL('image/png');
 		const link = document.createElement('a');
@@ -46,7 +46,7 @@ document.getElementById('saveImgBtn').addEventListener('click',
 	}
 );
 // очищение canvas
-document.getElementById('clearCanvasBtn').addEventListener('click', () => {
+document.getElementById('clear-canvas-btn').addEventListener('click', () => {
 	clearAnimation();
 })
 let front = document.querySelector('.front');

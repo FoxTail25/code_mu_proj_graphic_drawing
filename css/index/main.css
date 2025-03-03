@@ -25,23 +25,23 @@ button {
 	padding-bottom: 3px;
 }
 
-.inputContainer {
+.input-container {
 	display        : flex;
 	align-items    : center;
 	justify-content: center;
 }
-.inputContainer>label>input {
+.input-container>label>input {
 	width: 50px;
 }
 
-#colorInput {
+#color-input {
 	display   : inline-block;
 	visibility: hidden;
 	width     : 0px;
 	height    : 0px;
 }
 
-.paintColor {
+.paint-color {
 	position     : relative;
 	display      : inline-block;
 	height       : 30px;
@@ -49,39 +49,39 @@ button {
 	/* align-self: stretch; */
 }
 
-.paintColor>div {
+.paint-color>div {
 	height    : 20px;
 	width     : 30px;
 	position  : absolute;
 	background: black;
 }
 
-.paintColor>:nth-child(1) {
+.paint-color>:nth-child(1) {
 
 	clip-path: ellipse(40% 49.79% at 49.86% 49.8%);
 	top      : 5px;
 	left:5px
 }
 
-.paintColor>:nth-child(2) {
+.paint-color>:nth-child(2) {
 	clip-path: ellipse(50% 45% at 49.86% 49.8%);
 	left     : 2px;
 	top      : 17px;
 }
 
-.paintColor>:nth-child(3) {
+.paint-color>:nth-child(3) {
 	clip-path: ellipse(70% 49.79% at 49.86% 49.8%);
 	left     : 18px;
 	top      : 17px;
 }
 
-.paintColor>:nth-child(4) {
+.paint-color>:nth-child(4) {
 	clip-path: ellipse(50% 49.79% at 49.86% 49.8%);
 	left     : 19px;
 	top      : 1px;
 }
 
-.paintColor>:nth-child(5) {
+.paint-color>:nth-child(5) {
 	clip-path: ellipse(49.3% 53% at 49.86% 49.80%);
 	left     : 30px;
 	top      : 12px;
