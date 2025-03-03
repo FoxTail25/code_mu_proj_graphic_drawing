@@ -2,11 +2,6 @@ header {
 	background: transparent;
 	overflow  : hidden;
 }
-
-.header {
-	
-
-}
 .header>* {
 	position  : relative;
 	text-align: center;
