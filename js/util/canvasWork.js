@@ -8,6 +8,8 @@ class CanvasW {
   mouse = { x: 0, y: 0 };
   opacity = 1;
   color = "#000000";
+  // paintMemory = [];
+  // memoryStep;
   setColor(color) {
     let rgb = this._hex2rgb(color);
     let rgba;
@@ -16,6 +18,7 @@ class CanvasW {
     } else {
       rgba = `rgba(${rgb.red},${rgb.green},${rgb.blue},1)`;
     }
+    console.log("this.color", rgba);
     this._setColorData(rgba);
   }
   setBrushOpacity(num) {
@@ -60,6 +63,9 @@ class CanvasW {
     this.draw = true;
     context.beginPath();
     context.moveTo(mouse.x, mouse.y);
+
+    // memory "undo" (стереть последнюю линию)
+    // this._createPaintStep(mouse.x, mouse.y);
   }
   brushPaint(e) {
     let mouse = this.mouse;
@@ -69,6 +75,9 @@ class CanvasW {
       mouse.y = e.layerY - this.canvas.offsetTop;
       context.lineTo(mouse.x, mouse.y);
       context.stroke();
+
+      // memory "undo" (стереть последнюю линию
+      // this._addLineInPaintStep(mouse.x, mouse.y);
     }
   }
   stopBrushPaint(e) {
@@ -80,6 +89,9 @@ class CanvasW {
     context.stroke();
     context.closePath();
     this.draw = false;
+
+    // memory "undo" (стереть последнюю линию
+    // this._addPaintSepInMemory(mouse.x, mouse.y);
   }
   getCanvas() {
     return this.canvas;
@@ -95,6 +107,31 @@ class CanvasW {
     this.ctx.strokeStyle = rgba;
     this.color = rgba;
   }
+
+  // методы находящиеся ниже, нужны для работы кнопки "undo" (стереть последнюю линию)
+
+  // _createPaintStep(x, y) {
+  //   this.memoryStep = {};
+  //   this.memoryStep = {
+  //     moveToX: x,
+  //     moveToY: y,
+  //     color: this.ctx.strokeStyle,
+  //     weight: this.ctx.lineWidth,
+  //     blur: this.ctx.filter,
+  //     linePaths: [],
+  //   };
+  // }
+  // _addLineInPaintStep(x, y) {
+  //   this.memoryStep.linePaths.push({x: x, y: y,});
+  //   this.memoryStep.color= this.ctx.strokeStyle;
+  //   this.memoryStep.weight= this.ctx.lineWidth;
+  //   this.memoryStep.blur= this.ctx.filter;
+  // }
+  // _addPaintSepInMemory(x, y) {
+  //   this._addLineInPaintStep(x, y);
+  //   this.paintMemory.push(this.memoryStep);
+  //   // console.log(this.memoryStep);
+  // }
 }
 
 export default CanvasW;
